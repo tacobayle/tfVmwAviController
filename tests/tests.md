@@ -1,16 +1,7 @@
 # test summary
 
-## cluster
-
-- version: 21.1.2, cluster: true, dhcp: true, avi_password: auto // PASSED
-- version: 21.1.2, cluster: true, dhcp: true, avi_password: static // PASSED
-- version: 21.1.2, cluster: true, dhcp: false, avi_password: auto // PASSED
-- version: 21.1.2, cluster: true, dhcp: false, avi_password: static // PASSED
-
-## standalone
-
-- version: 21.1.2, cluster: false, dhcp: true, avi_password: auto // PASSED
-- version: 21.1.2, cluster: false, dhcp: true, avi_password: static // PASSED
-- version: 21.1.2, cluster: false, dhcp: false, avi_password: auto // PASSED
-- version: 21.1.2, cluster: false, dhcp: false, avi_password: static // PASSED
-- version: 21.1.3, cluster: false, dhcp: true, avi_password: auto // PASSED
+## 01_infra
+- version: 21.1.4, cluster: false, dhcp: true // PASSED
+- version: 21.1.4, cluster: true, dhcp: true // TBD
+- version: 21.1.4, cluster: false, dhcp: false // TBD
+- version: 21.1.4, cluster: true, dhcp: false // TBD

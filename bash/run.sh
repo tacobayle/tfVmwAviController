@@ -1,1 +1,3 @@
+cd ~ ; cd tfVmwAviController  ; /bin/bash destroy.sh ; cd ~ ; rm -fr tfVmwAviController ; git clone https://github.com/tacobayle/tfVmwAviController ; cd tfVmwAviController ; cd 01_infra ; terraform init ; terraform apply -auto-approve
+
 cd ~ ; cd tfVmwAviController  ; /bin/bash destroy.sh ; cd ~ ; rm -fr tfVmwAviController ; git clone https://github.com/tacobayle/tfVmwAviController ; cd tfVmwAviController ; /bin/bash apply.sh
