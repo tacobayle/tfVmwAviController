@@ -41,7 +41,7 @@ variable "dhcp" {
 }
 
 variable "avi_ip4_addresses" {
-  default = "[192.168.100.116, 192.168.100.117, 192.168.100.118]"
+  default = "[10.206.112.76, 10.206.112.77, 10.206.112.113]"
 }
 
 variable "network_mask" {
@@ -49,7 +49,7 @@ variable "network_mask" {
 }
 
 variable "gateway4" {
-  default = "192.168.100.254"
+  default = "10.206.112.1"
 }
 
 variable "avi_version" {
