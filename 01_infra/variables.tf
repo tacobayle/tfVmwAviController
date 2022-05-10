@@ -65,7 +65,7 @@ variable "avi_ntp_server_ips" {
 }
 
 variable "avi_cluster" {
-  default = false
+  default = true
 }
 
 variable "avi_old_password" {
