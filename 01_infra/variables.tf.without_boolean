@@ -57,7 +57,7 @@ variable "avi_ntp_server_ips" {
   default = "10.206.8.130, 10.206.8.131, 10.206.8.132"
 }
 
-variable "avi_current_password" {
+variable "avi_old_password" {
   default = "58NFaGDJm(PJH0G"
 }
 

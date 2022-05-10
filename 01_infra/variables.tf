@@ -10,9 +10,6 @@ variable "vsphere_server" {
   default = "wdc-06-vc12.oc.vmware.com"
 }
 
-variable "folder_name" {
-  default = "avi-ctl"
-}
 variable "vcenter_dc" {
   default = "wdc-06-vc12"
 }
@@ -30,7 +27,7 @@ variable "vcenter_network" {
 }
 
 variable "vcenter_folder" {
-  default = "my-folder"
+  default = "my-ctrl-folder"
 }
 
 variable "content_library" {
@@ -67,18 +64,11 @@ variable "avi_ntp_server_ips" {
   default = "10.206.8.130, 10.206.8.131, 10.206.8.132"
 }
 
-variable "avi_dns_server_ips" {
-   default = "8.8.8.8, 10.206.8.130, 10.206.8.131"
-}
-
-variable "avi_ntp_server_ips" {
-  default = "10.206.8.130, 10.206.8.131, 10.206.8.132"
-
 variable "avi_cluster" {
   default = false
 }
 
-variable "avi_current_password" {
+variable "avi_old_password" {
 }
 
 variable "avi_tenant" {

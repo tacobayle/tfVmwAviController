@@ -1,4 +1,4 @@
 vsphere_username     = ""
 vsphere_password     = ""
 avi_controller_url   = ""
-avi_current_password = ""
+avi_old_password = ""

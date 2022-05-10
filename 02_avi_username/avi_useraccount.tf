@@ -1,6 +1,6 @@
 resource "avi_useraccount" "avi_user" {
   username     = "admin"
-  old_password = var.avi_current_password
+  old_password = var.avi_old_password
   password     = var.avi_password == null ? random_string.avi_password_random.result : var.avi_password
 }
 

@@ -1,10 +1,9 @@
 resource "vsphere_virtual_machine" "controller_dhcp_cluster" {
   count            = (var.dhcp == true && var.avi_cluster == true ? 3 : 0)
   name             = "controller-${count.index}"
-  folder = var.vcenter_folder == null ? null : vsphere_folder.folder[0].path
   datastore_id     = data.vsphere_datastore.datastore.id
   resource_pool_id = data.vsphere_resource_pool.pool.id
-  folder           = var.folder_name
+  folder           = var.vcenter_folder
   network_interface {
     network_id = data.vsphere_network.network.id
   }
@@ -28,10 +27,9 @@ resource "vsphere_virtual_machine" "controller_dhcp_cluster" {
 resource "vsphere_virtual_machine" "controller_dhcp_standalone" {
   count            = (var.dhcp == true && var.avi_cluster== false ? 1 : 0)
   name             = "controller-${count.index}"
-  folder = var.vcenter_folder == null ? null : vsphere_folder.folder[0].path
   datastore_id     = data.vsphere_datastore.datastore.id
   resource_pool_id = data.vsphere_resource_pool.pool.id
-  folder           = var.folder_name
+  folder           = var.vcenter_folder
   network_interface {
     network_id = data.vsphere_network.network.id
   }
@@ -55,10 +53,9 @@ resource "vsphere_virtual_machine" "controller_dhcp_standalone" {
 resource "vsphere_virtual_machine" "controller_static_cluster" {
   count            = (var.dhcp == false && var.avi_cluster== true ? 3 : 0)
   name             = "controller-${count.index}"
-  folder = var.vcenter_folder == null ? null : vsphere_folder.folder[0].path
   datastore_id     = data.vsphere_datastore.datastore.id
   resource_pool_id = data.vsphere_resource_pool.pool.id
-  folder           = var.folder_name
+  folder           = var.vcenter_folder
   network_interface {
     network_id = data.vsphere_network.network.id
   }
@@ -90,10 +87,9 @@ resource "vsphere_virtual_machine" "controller_static_cluster" {
 resource "vsphere_virtual_machine" "controller_static_standalone" {
   count            = (var.dhcp == false && var.avi_cluster== false ? 1 : 0)
   name             = "controller-${count.index}"
-  folder = var.vcenter_folder == null ? null : vsphere_folder.folder[0].path
   datastore_id     = data.vsphere_datastore.datastore.id
   resource_pool_id = data.vsphere_resource_pool.pool.id
-  folder           = var.folder_name
+  folder           = var.vcenter_folder
   network_interface {
     network_id = data.vsphere_network.network.id
   }
@@ -159,7 +155,7 @@ resource "null_resource" "wait_https_controller_static_standalone" {
 }
 
 resource "local_file" "output_json_file_avi_config" {
-  content     = "{\"avi_version\": ${jsonencode(var.avi_version)}, \"avi_tenant\": ${jsonencode(var.avi_tenant)}, \"avi_current_password\": ${jsonencode(var.avi_current_password)}, \"avi_cluster\": ${jsonencode(var.avi_cluster)}, \"avi_dns_server_ips\": ${jsonencode(var.avi_dns_server_ips)}, \"avi_ntp_server_ips\": ${jsonencode(var.avi_ntp_server_ips)}, \"deployment_id\": ${jsonencode(random_string.id.result)}, \"avi_default_license_tier\": ${jsonencode(var.avi_default_license_tier)}}"
+  content     = "{\"avi_version\": ${jsonencode(var.avi_version)}, \"avi_tenant\": ${jsonencode(var.avi_tenant)}, \"avi_old_password\": ${jsonencode(var.avi_old_password)}, \"avi_cluster\": ${jsonencode(var.avi_cluster)}, \"avi_dns_server_ips\": ${jsonencode(var.avi_dns_server_ips)}, \"avi_ntp_server_ips\": ${jsonencode(var.avi_ntp_server_ips)}, \"deployment_id\": ${jsonencode(random_string.id.result)}, \"avi_default_license_tier\": ${jsonencode(var.avi_default_license_tier)}}"
   filename = "../avi_config.json"
 }
 
