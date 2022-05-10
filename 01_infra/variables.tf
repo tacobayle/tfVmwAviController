@@ -41,7 +41,7 @@ variable "dhcp" {
 }
 
 variable "avi_ip4_addresses" {
-  default = "[10.206.112.76, 10.206.112.77, 10.206.112.113]"
+  default = ["10.206.112.76", "10.206.112.77", "10.206.112.113"]
 }
 
 variable "network_mask" {
