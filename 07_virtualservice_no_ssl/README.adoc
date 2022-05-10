@@ -1,0 +1,3 @@
+= Creating a VS, POOL, and Pool Group
+
+This will create a VS with a application profile using the default System TCP Proxy for the Profile.  It will use two servers for the backend, using the group pool for the config of the vs and sets the algorithm to Round Robing. All those options are set by the variable in the variable.tf file.

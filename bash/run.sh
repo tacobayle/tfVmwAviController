@@ -1,0 +1,1 @@
+cd ~ ; cd tfVmwAviController  ; /bin/bash destroy.sh ; cd ~ ; rm -fr tfVmwAviController ; git clone https://github.com/tacobayle/tfVmwAviController ; cd tfVmwAviController ; /bin/bash apply.sh
