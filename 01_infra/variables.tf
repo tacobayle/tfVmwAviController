@@ -52,31 +52,8 @@ variable "gateway4" {
   default = "10.206.112.1"
 }
 
-variable "avi_version" {
-  default = "21.1.4"
-}
-    
-variable "avi_dns_server_ips" {
-  default = "8.8.8.8, 10.206.8.130, 10.206.8.131"
-}
-
-variable "avi_ntp_server_ips" {
-  default = "10.206.8.130, 10.206.8.131, 10.206.8.132"
-}
-
 variable "avi_cluster" {
   default = true
-}
-
-variable "avi_old_password" {
-}
-
-variable "avi_tenant" {
-  default = "admin"
-}
-
-variable "avi_default_license_tier" {
-  default = "ENTERPRISE_WITH_CLOUD_SERVICES"
 }
 
 variable "controller" {

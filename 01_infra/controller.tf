@@ -3,7 +3,7 @@ resource "vsphere_virtual_machine" "controller_dhcp_cluster" {
   name             = "controller-${count.index}"
   datastore_id     = data.vsphere_datastore.datastore.id
   resource_pool_id = data.vsphere_resource_pool.pool.id
-  folder           = var.vcenter_folder
+  folder           = vsphere_folder.folder.path
   network_interface {
     network_id = data.vsphere_network.network.id
   }
@@ -29,7 +29,7 @@ resource "vsphere_virtual_machine" "controller_dhcp_standalone" {
   name             = "controller-${count.index}"
   datastore_id     = data.vsphere_datastore.datastore.id
   resource_pool_id = data.vsphere_resource_pool.pool.id
-  folder           = var.vcenter_folder
+  folder           = vsphere_folder.folder.path
   network_interface {
     network_id = data.vsphere_network.network.id
   }
@@ -55,7 +55,7 @@ resource "vsphere_virtual_machine" "controller_static_cluster" {
   name             = "controller-${count.index}"
   datastore_id     = data.vsphere_datastore.datastore.id
   resource_pool_id = data.vsphere_resource_pool.pool.id
-  folder           = var.vcenter_folder
+  folder           = vsphere_folder.folder.path
   network_interface {
     network_id = data.vsphere_network.network.id
   }
@@ -89,7 +89,7 @@ resource "vsphere_virtual_machine" "controller_static_standalone" {
   name             = "controller-${count.index}"
   datastore_id     = data.vsphere_datastore.datastore.id
   resource_pool_id = data.vsphere_resource_pool.pool.id
-  folder           = var.vcenter_folder
+  folder           = vsphere_folder.folder.path
   network_interface {
     network_id = data.vsphere_network.network.id
   }
@@ -152,11 +152,6 @@ resource "null_resource" "wait_https_controller_static_standalone" {
   provisioner "local-exec" {
     command = "until $(curl --output /dev/null --silent --head -k https://${vsphere_virtual_machine.controller_static_standalone[count.index].default_ip_address}); do echo 'Waiting for Avi Controllers to be ready'; sleep 10 ; done"
   }
-}
-
-resource "local_file" "output_json_file_avi_config" {
-  content     = "{\"avi_version\": ${jsonencode(var.avi_version)}, \"avi_tenant\": ${jsonencode(var.avi_tenant)}, \"avi_old_password\": ${jsonencode(var.avi_old_password)}, \"avi_cluster\": ${jsonencode(var.avi_cluster)}, \"avi_dns_server_ips\": ${jsonencode(var.avi_dns_server_ips)}, \"avi_ntp_server_ips\": ${jsonencode(var.avi_ntp_server_ips)}, \"deployment_id\": ${jsonencode(random_string.id.result)}, \"avi_default_license_tier\": ${jsonencode(var.avi_default_license_tier)}}"
-  filename = "../avi_config.json"
 }
 
 resource "local_file" "output_json_file_dhcp_cluster" {
