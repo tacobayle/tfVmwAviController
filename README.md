@@ -62,7 +62,7 @@ terraform apply -auto-approve
   - if var.avi_password is not defined a random password will be generated and used to configure Avi password and Avi passphrase, it will be displayed at the end
 ```shell
 # initialize your variables in variables.tf
-cd ../02_avi_username; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json -var-file=../avi_config.json
+cd ../02_avi_username; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json
 ```  
 - Configure Avi System config:
   - DNS servers via var.avi_dns_server_ips ("8.8.8.8, 10.206.8.130, 10.206.8.131")
