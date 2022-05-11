@@ -5,7 +5,6 @@ Terraform | Deploy a brand new Avi Controller (standalone or cluster) in vCenter
 
 ## Prerequisites:
 - Terraform installed in the orchestrator VM
-- jq installed in the orchestrator VM
 - environment variables:
 ```
 export TF_VAR_vsphere_username=******
@@ -40,10 +39,9 @@ controller-21.1.2-9124.ova
 ```
 
 ## Input/Parameters:
-1. All the variables are stored in 01/infra/variables.tf
+- All the variables are stored in each folder in the variables.tf file.
 
 ## Use this repo to:
-- configure var.avi_version (default is 21.1.2)
 - Spin up n Avi Controller vCenter environment:
   - if var.dhcp is true, VM(s) will obtain IPs through DHCP
   - if var.dhcp is false, VM(s) will obtain IP configuration through:
@@ -52,6 +50,13 @@ controller-21.1.2-9124.ova
     - Gateway via var.gateway4 ("10.206.112.1") 
   - if var.cluster is false, 1 VM controller will be deployed
   - if var.cluster is true, 3 VM controller will be deployed and configured as a cluster
+```shell
+git clone https://github.com/tacobayle/tfVmwAviController
+cd tfVmwAviController/01_infra
+# initialize your varaible
+terraform init
+terraform apply -auto-approve
+```  
 - Configure Avi System config:
   - if var.avi_password is defined it will be used to configure Avi password and Avi passphrase
   - if var.avi_password is not defined a random password will be generated and used to configure Avi password and Avi passphrase, it will be displayed at the end
