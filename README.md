@@ -53,13 +53,18 @@ controller-21.1.2-9124.ova
 ```shell
 git clone https://github.com/tacobayle/tfVmwAviController
 cd tfVmwAviController/01_infra
-# initialize your varaible
+# initialize your variables in variables.tf
 terraform init
 terraform apply -auto-approve
-```  
-- Configure Avi System config:
+```
+- update admin password:
   - if var.avi_password is defined it will be used to configure Avi password and Avi passphrase
   - if var.avi_password is not defined a random password will be generated and used to configure Avi password and Avi passphrase, it will be displayed at the end
+```shell
+# initialize your variables in variables.tf
+cd ../02_avi_username; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json -var-file=../avi_config.json
+```  
+- Configure Avi System config:
   - DNS servers via var.avi_dns_server_ips ("8.8.8.8, 10.206.8.130, 10.206.8.131")
   - NTP servers via var.avi_ntp_server_ips ("10.206.8.130, 10.206.8.131, 10.206.8.132")
 - Configure Avi cluster (if var.cluster is true):
