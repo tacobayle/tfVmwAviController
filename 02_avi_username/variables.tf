@@ -3,7 +3,9 @@ variable "avi_old_password" {}
 variable "avi_password" {
   default = null
 }
-
+variable "avi_tenant" {
+  default = "admin"
+}
 variable "avi_version" {
   default = "21.1.4"
 }
