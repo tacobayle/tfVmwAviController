@@ -82,5 +82,5 @@ cd ../04_avi_cluster; terraform init; terraform apply -auto-approve -no-color -v
   - Avi cloud will be configured
 ```shell
 # initialize your variables in variables.tf
-cd ../06_vmware_cc_only; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json  -var-file=../.password.json
+cd ../05_avi_vcenter_cc; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json  -var-file=../.password.json
 ```

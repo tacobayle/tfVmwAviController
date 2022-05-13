@@ -43,3 +43,37 @@ variable "vcenter_license_type" {
 }
 
 variable "avi_controller_ips" {}
+
+variable "se_prefix" {
+  default = "Avi_RM_SE_AA"
+}
+variable "mem_per_se" {
+  default     = 2048
+  description = "for WAF you will need more ram"
+}
+variable "max_vs_per_se" {
+  default     = 20
+  description = "max se for this group"
+}
+variable "max_se" {
+  default     = 2
+  description = ""
+}
+variable "connection_mem_percentage" {
+  default     = 50
+  description = "default"
+}
+variable "disk_per_se" {
+  default     = 25
+  description = "default"
+}
+variable "ha_mode" {
+  default = "HA_MODE_SHARED"
+}
+variable "vcpus_per_se" {
+  default     = 2
+  description = "How many CPU per SE"
+}
+variable "deprovision_delay" {
+  default = 5
+}
