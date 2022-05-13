@@ -1,6 +1,6 @@
 resource "avi_cluster" "avi_cluster" {
   count            = (var.avi_cluster == true ? 1 : 0)
-  name = "cluster_avi_tf_${var.deployment_id}"
+  name = "cluster_avi_tf"
   nodes {
     ip {
       type = "V4"
@@ -24,12 +24,11 @@ resource "avi_cluster" "avi_cluster" {
   }
 }
 
-resource "null_resource" "cluster_sanitty_check" {
-  depends_on = [avi_cluster.avi_cluster]
-  count = (var.avi_cluster == true ? 1 : 0)
-
-  provisioner "local-exec" {
-    command = "/bin/bash avi_cluster_sanity_check.sh"
-  }
-}
-
+//resource "null_resource" "cluster_sanity_check" {
+//  depends_on = [avi_cluster.avi_cluster]
+//  count = (var.avi_cluster == true ? 1 : 0)
+//
+//  provisioner "local-exec" {
+//    command = "/bin/bash avi_cluster_sanity_check.sh"
+//  }
+//}

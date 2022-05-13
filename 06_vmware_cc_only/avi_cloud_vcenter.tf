@@ -3,11 +3,11 @@ resource "avi_cloud" "vmware_cloud_tf" {
   vtype        = "CLOUD_VCENTER"
   dhcp_enabled = true
   vcenter_configuration {
-    username                 = var.vsphere_user
+    username                 = var.vsphere_username
     datacenter               = var.vcenter_datacenter
     management_network       = var.vcenter_network
     privilege                = var.vsphere_privilege
-    vcenter_url              = var.vsphere_url
+    vcenter_url              = var.vsphere_server
     password                 = var.vsphere_password
     deactivate_vm_discovery =  "false"
   }

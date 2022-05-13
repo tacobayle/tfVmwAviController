@@ -67,24 +67,20 @@ cd ../02_avi_username; terraform init; terraform apply -auto-approve -no-color -
 - Configure Avi System config:
   - DNS servers via var.avi_dns_server_ips ("8.8.8.8, 10.206.8.130, 10.206.8.131")
   - NTP servers via var.avi_ntp_server_ips ("10.206.8.130, 10.206.8.131, 10.206.8.132")
+```shell  
+# initialize your variables in variables.tf
+cd ../03_avi_config; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json -var-file=../.password.json  
+```
 - Configure Avi cluster (if var.cluster is true):
   - Avi cluster will be configured
   - A sanity check will make sure the cluster has been configured properly  
-
-## Consume the repo:
-- git clone
 ```shell
-cd ~
-git clone https://github.com/tacobayle/tfVmwAviController
-cd tfVmwAviController
-terraform init
+# initialize your variables in variables.tf
+cd ../04_avi_cluster; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json  -var-file=../.password.json
 ```
-- Change the variables.tf and environment variables according to your environment
-- Run the repo
+- Configure Avi cloud  (vcenter type):
+  - Avi cloud will be configured
 ```shell
-/bin/bash apply.sh
-```
-- Destroy
-```shell
-/bin/bash destroy.sh
+# initialize your variables in variables.tf
+cd ../06_vmware_cc_only; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json  -var-file=../.password.json
 ```

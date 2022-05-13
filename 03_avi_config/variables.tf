@@ -1,6 +1,6 @@
-//variable "avi_version" {
-//  default = "21.1.4"
-//}
+variable "avi_version" {
+  default = "21.1.4"
+}
 //variable "avi_controller_ips" {
 //   default = ["192.168.101.5"]
 //}
@@ -38,7 +38,7 @@ variable "avi_tenant" {
   default = "admin"
 }
 variable "avi_default_license_tier" {
-  default = "ENTERPRISE_WITH_CLOUD_SERVICES"
+  default = "ENTERPRISE" # or "ENTERPRISE_WITH_CLOUD_SERVICES"
 }
 variable "mail_server_tls" {
   default = false
@@ -61,6 +61,5 @@ variable "banner" {
 variable "search_domain" {
   default = "io.local"
 }
-variable "avi_version" {}
 variable "avi_controller_ips" {}
 variable "avi_password" {}
