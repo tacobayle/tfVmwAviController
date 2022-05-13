@@ -7,6 +7,6 @@ resource "avi_vsvip" "avi_vsvip" {
       addr = var.vip_ip
     }
   }
-  cloud_ref    = avi_cloud.vmware_cloud_tf.id
+  cloud_ref = data.avi_cloud.default_cloud.id
   tenant_ref   = var.tenant
 }

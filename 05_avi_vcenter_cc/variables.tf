@@ -2,8 +2,7 @@ variable "avi_username" {
   default = "admin"
 }
 
-variable "avi_password" {
-}
+variable "avi_password" {}
 
 variable "vcenter_datacenter" {
   default = "wdc-06-vc12"

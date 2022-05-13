@@ -13,7 +13,7 @@ variable "vm_datastore" {
   default = ""
 }
 variable "cloud_name" {
-  default = "vcenter"
+  default = "dc1_vcenter"
 }
 variable "vcenter_network" {
   default = "vxw-dvs-34-virtualwire-3-sid-6120002-wdc-06-vc12-avi-mgmt"
@@ -83,4 +83,3 @@ variable "vip_ip" {
 variable "vs_port" {
   default = "443"
 }
-
