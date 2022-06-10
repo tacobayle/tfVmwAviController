@@ -78,7 +78,7 @@ cd ../03_avi_config; terraform init; terraform apply -auto-approve -no-color -va
 # initialize your variables in variables.tf
 cd ../04_avi_cluster; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json  -var-file=../.password.json
 ```
-- Configure Avi cloud  (vcenter type):
+- Configure Avi cloud  (vcenter type) without IPAM and without DNS profile
   - Avi cloud will be configured
   - Default Service Engine Group will be updated
 ```shell
