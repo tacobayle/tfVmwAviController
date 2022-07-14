@@ -37,7 +37,7 @@ variable "content_library" {
 }
 
 variable "dhcp" {
-  default = true
+  default = false
 }
 
 variable "avi_ip4_addresses" {
