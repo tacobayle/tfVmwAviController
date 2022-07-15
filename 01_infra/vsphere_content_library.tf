@@ -13,7 +13,7 @@ resource "vsphere_content_library_item" "file" {
   depends_on = [null_resource.download_avi]
   name        = "/tmp/${split(".ova", basename(var.avi_controller_url))[0]}.ova"
   library_id  = vsphere_content_library.library.id
-  file_url = "/tmp/controller.ova"
+  file_url = "/tmp/${split(".ova", basename(var.avi_controller_url))[0]}.ova"
 }
 
 resource "null_resource" "remove_download_avi" {
