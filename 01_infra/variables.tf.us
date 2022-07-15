@@ -61,6 +61,5 @@ variable "controller" {
     cpu = 8
     memory = 24768
     disk = 128
-    wait_for_guest_net_timeout = 4
   }
 }

@@ -10,7 +10,6 @@ resource "vsphere_virtual_machine" "controller_dhcp_cluster" {
 
   num_cpus = var.controller.cpu
   memory = var.controller.memory
-  wait_for_guest_net_timeout = var.controller.wait_for_guest_net_timeout
   guest_id = "guestid-controller-${count.index}"
 
   disk {
@@ -36,7 +35,6 @@ resource "vsphere_virtual_machine" "controller_dhcp_standalone" {
 
   num_cpus = var.controller.cpu
   memory = var.controller.memory
-  wait_for_guest_net_timeout = var.controller.wait_for_guest_net_timeout
   guest_id = "guestid-controller-${count.index}"
 
   disk {
@@ -62,7 +60,6 @@ resource "vsphere_virtual_machine" "controller_static_cluster" {
 
   num_cpus = var.controller.cpu
   memory = var.controller.memory
-  wait_for_guest_net_timeout = var.controller.wait_for_guest_net_timeout
   guest_id = "guestid-controller-${count.index}"
 
   disk {
@@ -96,7 +93,6 @@ resource "vsphere_virtual_machine" "controller_static_standalone" {
 
   num_cpus = var.controller.cpu
   memory = var.controller.memory
-  wait_for_guest_net_timeout = var.controller.wait_for_guest_net_timeout
   guest_id = "guestid-controller-${count.index}"
 
   disk {
