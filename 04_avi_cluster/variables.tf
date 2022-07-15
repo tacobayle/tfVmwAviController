@@ -6,6 +6,3 @@ variable "avi_tenant" {
     default = "admin"
 }
 variable "avi_password" {}
-variable "avi_cluster" {
-    default = true
-}

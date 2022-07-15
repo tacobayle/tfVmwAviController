@@ -1,5 +1,5 @@
 resource "avi_cluster" "avi_cluster" {
-  count            = (var.avi_cluster == true ? 1 : 0)
+  count            = length(var.avi_controller_ips) == 3 ? 1 : 0
   name = "cluster_avi_tf"
   nodes {
     ip {
