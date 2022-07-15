@@ -53,7 +53,7 @@ variable "gateway4" {
 }
 
 variable "avi_cluster" {
-  default = true
+  default = false
 }
 
 variable "controller" {
@@ -61,5 +61,6 @@ variable "controller" {
     cpu = 8
     memory = 24768
     disk = 128
+    remove_file = false
   }
 }
