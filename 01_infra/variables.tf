@@ -53,7 +53,7 @@ variable "gateway4" {
 }
 
 variable "avi_cluster" {
-  default = false
+  default = true
 }
 
 variable "controller" {
