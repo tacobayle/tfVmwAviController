@@ -1,6 +1,6 @@
 resource "null_resource" "download_avi" {
   provisioner "local-exec" {
-    command = "if [ -f $(basename '${var.avi_controller_url}' | sed -e 's/.ova.*/.ova/g') | sed -e 's/^/\\/tmp\\//') ]; then echo \"$(basename '${var.avi_controller_url}' | sed -e 's/.ova.*/.ova/g' | sed -e 's/^/\\/tmp\\//') exists.\" ; else curl --silent -o $(basename '${var.avi_controller_url}' | sed -e 's/.ova.*/.ova/g' | sed -e 's/^/\\/tmp\\//') '${var.avi_controller_url}' ; fi"
+    command = "if [ -f $(basename '${var.avi_controller_url}' | sed -e 's/.ova.*/.ova/g' | sed -e 's/^/\\/tmp\\//') ]; then echo \"$(basename '${var.avi_controller_url}' | sed -e 's/.ova.*/.ova/g' | sed -e 's/^/\\/tmp\\//') exists.\" ; else curl --silent -o $(basename '${var.avi_controller_url}' | sed -e 's/.ova.*/.ova/g' | sed -e 's/^/\\/tmp\\//') '${var.avi_controller_url}' ; fi"
   }
 }
 
