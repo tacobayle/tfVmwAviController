@@ -11,7 +11,7 @@ resource "vsphere_content_library" "library" {
 
 resource "vsphere_content_library_item" "file" {
   depends_on = [null_resource.download_avi]
-  name        = "controller.ova"
+  name        = "/tmp/${split(".ova", basename(var.avi_controller_url))[0]}.ova"
   library_id  = vsphere_content_library.library.id
   file_url = "/tmp/controller.ova"
 }
