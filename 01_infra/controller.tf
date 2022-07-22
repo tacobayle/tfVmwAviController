@@ -156,24 +156,24 @@ resource "null_resource" "wait_https_controller_static_standalone" {
 
 resource "local_file" "output_json_file_dhcp_cluster" {
   count            = (var.dhcp == true && var.avi_cluster== true ? 1 : 0)
-  content     = "{\"avi_controller_ips\": ${jsonencode(vsphere_virtual_machine.controller_dhcp_cluster.*.default_ip_address)}}"
+  content     = "{\"avi_controller_ips\": ${jsonencode(vsphere_virtual_machine.controller_dhcp_cluster.*.default_ip_address)}, \"content_library_id\": ${vsphere_content_library.library.id}}"
   filename = "../controllers.json"
 }
 
 resource "local_file" "output_json_file_dhcp_standalone" {
   count            = (var.dhcp == true && var.avi_cluster== false ? 1 : 0)
-  content     = "{\"avi_controller_ips\": ${jsonencode(vsphere_virtual_machine.controller_dhcp_standalone.*.default_ip_address)}}"
+  content     = "{\"avi_controller_ips\": ${jsonencode(vsphere_virtual_machine.controller_dhcp_standalone.*.default_ip_address)}}, \"content_library_id\": ${vsphere_content_library.library.id}}"
   filename = "../controllers.json"
 }
 
 resource "local_file" "output_json_file_static_cluster" {
   count            = (var.dhcp == false && var.avi_cluster== true ? 1 : 0)
-  content     = "{\"avi_controller_ips\": ${jsonencode(vsphere_virtual_machine.controller_static_cluster.*.default_ip_address)}}"
+  content     = "{\"avi_controller_ips\": ${jsonencode(vsphere_virtual_machine.controller_static_cluster.*.default_ip_address)}}, \"content_library_id\": ${vsphere_content_library.library.id}}"
   filename = "../controllers.json"
 }
 
 resource "local_file" "output_json_file_static_standalone" {
   count            = (var.dhcp == false && var.avi_cluster== false ? 1 : 0)
-  content     = "{\"avi_controller_ips\": ${jsonencode(vsphere_virtual_machine.controller_static_standalone.*.default_ip_address)}}"
+  content     = "{\"avi_controller_ips\": ${jsonencode(vsphere_virtual_machine.controller_static_standalone.*.default_ip_address)}}, \"content_library_id\": ${vsphere_content_library.library.id}}"
   filename = "../controllers.json"
 }

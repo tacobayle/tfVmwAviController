@@ -4,6 +4,8 @@ variable "avi_username" {
 
 variable "avi_password" {}
 
+variable "content_library_id" {}
+
 variable "vcenter_datacenter" {
   default = "sof2-01-vc08"
 }
@@ -27,7 +29,7 @@ variable "vsphere_server" {
 }
 
 variable "avi_version" {
-  default = "21.1.4"
+  default = "22.1.1"
 }
 variable "tenant" {
   default = "admin"

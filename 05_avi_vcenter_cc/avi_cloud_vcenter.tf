@@ -8,6 +8,10 @@ resource "avi_cloud" "vmware_cloud_tf" {
     management_network       = var.vcenter_network
     privilege                = var.vsphere_privilege
     vcenter_url              = var.vsphere_server
+    use_content_lib          = true
+    content_lib {
+      id = var.content_library_id
+    }
     password                 = var.vsphere_password
     deactivate_vm_discovery =  "false"
   }
