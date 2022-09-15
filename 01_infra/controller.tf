@@ -10,7 +10,7 @@ resource "vsphere_virtual_machine" "controller_dhcp_cluster" {
 
   num_cpus = var.controller.cpu
   memory = var.controller.memory
-  guest_id = "guestid-controller-${count.index}"
+  guest_id = "ubuntu64Guest"
   wait_for_guest_net_routable = false
 
   disk {
@@ -36,7 +36,7 @@ resource "vsphere_virtual_machine" "controller_dhcp_standalone" {
 
   num_cpus = var.controller.cpu
   memory = var.controller.memory
-  guest_id = "guestid-controller-${count.index}"
+  guest_id = "ubuntu64Guest"
   wait_for_guest_net_routable = false
 
   disk {
@@ -62,7 +62,7 @@ resource "vsphere_virtual_machine" "controller_static_cluster" {
 
   num_cpus = var.controller.cpu
   memory = var.controller.memory
-  guest_id = "guestid-controller-${count.index}"
+  guest_id = "ubuntu64Guest"
   wait_for_guest_net_routable = false
 
   disk {
