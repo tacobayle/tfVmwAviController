@@ -11,6 +11,9 @@ export TF_VAR_vsphere_username=******
 export TF_VAR_vsphere_password=******
 export TF_VAR_avi_controller_url=****** # defines the url where Avi controller OVA image will be downloaded
 ```
+- If you don't know a URL to download Avi, you can always run 'python3 -m http.server' in the folder where you have Avi ova controller downloaded.
+- Avi ova controller can be downloaded at customerconnect.vmware.com
+
 
 ## Environment:
 
