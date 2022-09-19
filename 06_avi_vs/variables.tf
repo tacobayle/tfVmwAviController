@@ -13,7 +13,7 @@ variable "vm_datastore" {
   default = ""
 }
 variable "cloud_name" {
-  default = "dc1_vcenter"
+  default = "dc1_vCenter"
 }
 variable "vcenter_network" {
   default = "vxw-dvs-34-virtualwire-3-sid-6120002-wdc-06-vc12-avi-mgmt"
