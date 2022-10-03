@@ -1,12 +1,18 @@
-cd 04_avi_cluster
-terraform destroy -auto-approve -no-color -var-file=../controllers.json -var-file=../avi_config.json -var-file=../.password.json
-cd ..
-cd 03_avi_config
-terraform destroy -auto-approve -no-color -var-file=../controllers.json -var-file=../avi_config.json -var-file=../.password.json
-cd ..
-cd 02_avi_username
-terraform destroy -auto-approve -no-color -var-file=../controllers.json -var-file=../avi_config.json -var-file=../.password.json
-cd ..
-cd 01_infra
+#!/bin/bash
+cd 07_waf_policy
+rm -fr .terraform .terraform.lock.hcl terraform.tfstate terraform.tfstate.backup
+cd ../06_avi_vs_no_ssl
+rm -fr .terraform .terraform.lock.hcl terraform.tfstate terraform.tfstate.backup
+cd ../06_avi_vs
+rm -fr .terraform .terraform.lock.hcl terraform.tfstate terraform.tfstate.backup
+cd ../05_avi_vcenter_cc
+rm -fr .terraform .terraform.lock.hcl terraform.tfstate terraform.tfstate.backup
+cd ../04_avi_cluster
+rm -fr .terraform .terraform.lock.hcl terraform.tfstate terraform.tfstate.backup
+cd ../03_avi_config
+rm -fr .terraform .terraform.lock.hcl terraform.tfstate terraform.tfstate.backup
+cd ../02_avi_username
+rm -fr .terraform .terraform.lock.hcl terraform.tfstate terraform.tfstate.backup
+cd ../01_infra
 terraform destroy -auto-approve -no-color
-cd ..
+rm -fr .terraform .terraform.lock.hcl terraform.tfstate terraform.tfstate.backup
