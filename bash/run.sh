@@ -1,4 +1,4 @@
 cd ~/tfVmwAviController/01_infra ; terraform destroy -auto-approve; cd ~ ;  rm -fr tfVmwAviController ; git clone https://github.com/tacobayle/tfVmwAviController ; cd tfVmwAviController/01_infra ; terraform init ; terraform apply -auto-approve
 cd ../02_avi_username; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json -var-file=../avi_config.json
 cd ../03_avi_config ; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json -var-file=../avi_config.json -var-file=../.password.json
-cd ~ ; cd tfVmwAviController  ; /bin/bash destroy.sh ; cd ~ ; rm -fr tfVmwAviController ; git clone https://github.com/tacobayle/tfVmwAviController ; cd tfVmwAviController ; /bin/bash apply.sh
+cd ~ ; cd tfVmwAviController  ; /bin/bash bash/destroy.sh ; cd ~ ; rm -fr tfVmwAviController ; git clone https://github.com/tacobayle/tfVmwAviController ; cd tfVmwAviController ; /bin/bash bash/apply.sh
