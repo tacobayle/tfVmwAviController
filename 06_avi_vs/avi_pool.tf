@@ -6,6 +6,17 @@ resource "avi_pool" "pool_tf_vs" {
   #]
   name = var.pool_name
 
+  placement_networks {
+    subnet {
+      ip_addr {
+        addr = split("/", var.vcenter_network_subnet_cidr)[0]
+        type = "V4"
+      }
+      mask = split("/", var.vcenter_network_subnet_cidr)[1]
+    }
+    network_ref = data.avi_network.network_vip.id
+  }
+
   rewrite_host_header_to_sni = var.rewrite_host_header
   server_name                = var.server_name
 
