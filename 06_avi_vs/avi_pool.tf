@@ -9,10 +9,10 @@ resource "avi_pool" "pool_tf_vs" {
   placement_networks {
     subnet {
       ip_addr {
-        addr = split("/", var.vcenter_network_subnet_cidr)[0]
+        addr = split("/", var.vcenter_network_pool_subnet_cidr)[0]
         type = "V4"
       }
-      mask = split("/", var.vcenter_network_subnet_cidr)[1]
+      mask = split("/", var.vcenter_network_pool_subnet_cidr)[1]
     }
     network_ref = data.avi_network.network_vip.id
   }

@@ -9,6 +9,7 @@ Terraform | Deploy a brand new Avi Controller (standalone or cluster) in vCenter
 ```
 export TF_VAR_vsphere_username=******
 export TF_VAR_vsphere_password=******
+export TF_VAR_avi_old_password=******
 export TF_VAR_avi_controller_url=****** # defines the url where Avi controller OVA image will be downloaded
 ```
 - If you don't know a URL to download Avi, you can always run 'python3 -m http.server' in the folder where you have Avi ova controller downloaded.
@@ -87,4 +88,14 @@ cd ../04_avi_cluster; terraform init; terraform apply -auto-approve -no-color -v
 ```shell
 # initialize your variables in variables.tf
 cd ../05_avi_vcenter_cc; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json  -var-file=../.password.json
+```
+- Configure Avi VS without IPAM and without DNS profile
+  - Avi application profile will be configured
+  - Avi network profile will be configured
+  - Avi pool profile will be configured
+  - Avi vs-vip will be configured
+  - Avi vs will be configured
+```shell
+# initialize your variables in variables.tf
+cd ../06_avi_vs; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json  -var-file=../.password.json
 ```
