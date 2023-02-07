@@ -89,6 +89,13 @@ cd ../04_avi_cluster; terraform init; terraform apply -auto-approve -no-color -v
 # initialize your variables in variables.tf
 cd ../05_avi_vcenter_cc; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json  -var-file=../.password.json
 ```
+- Configure BGP parameters in a VRF
+  - BGP will be enabled
+  - BGP peers will be configured
+```shell
+# initialize your variables in variables.tf
+cd ../06_vrf_bgp; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json  -var-file=../.password.json
+```
 - Configure Avi VS without IPAM and without DNS profile
   - Avi application profile will be configured
   - Avi network profile will be configured
@@ -97,5 +104,15 @@ cd ../05_avi_vcenter_cc; terraform init; terraform apply -auto-approve -no-color
   - Avi vs will be configured
 ```shell
 # initialize your variables in variables.tf
-cd ../06_avi_vs; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json  -var-file=../.password.json
+cd ../07_avi_vs; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json  -var-file=../.password.json
+```
+- Configure Avi VS without IPAM and without DNS profile advertised by BGP
+  - Avi application profile will be configured
+  - Avi network profile will be configured
+  - Avi pool profile will be configured
+  - Avi vs-vip will be configured
+  - Avi vs will be configured
+```shell
+# initialize your variables in variables.tf
+cd ../07_avi_vs; terraform init; terraform apply -auto-approve -no-color -var-file=../controllers.json  -var-file=../.password.json
 ```
