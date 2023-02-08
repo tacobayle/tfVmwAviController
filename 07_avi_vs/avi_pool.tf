@@ -20,14 +20,18 @@ resource "avi_pool" "pool_tf_vs" {
   rewrite_host_header_to_sni = var.rewrite_host_header
   server_name                = var.server_name
 
-  servers {
-    hostname              = var.hostname
-    ratio                 = 1
-    enabled               = true
-    resolve_server_by_dns = var.resolve_server_by_dns
-    ip {
-      addr = var.server_ip
-      type = "V4"
+  dynamic "servers" {
+    for_each = var.servers
+    content {
+      hostname              = servers.value.hostname
+      ratio                 = servers.value.ratio
+      enabled               = servers.value.enabled
+      resolve_server_by_dns = servers.value.resolve_server_by_dns
+
+      ip {
+        addr = servers.value.addr
+        type = "V4"
+      }
     }
   }
     fail_action {

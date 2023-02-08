@@ -2,11 +2,13 @@ resource "avi_vrfcontext" "vmware_vrf_tf" {
   name = var.avi_vrf
   cloud_ref = data.avi_cloud.default_cloud.id
   system_default = var.avi_vrf_system_default
+
   bgp_profile {
     hold_time          = var.bgp_profile.hold_time
     ibgp               = var.bgp_profile.ibgp
     keepalive_interval = var.bgp_profile.keepalive_interval
     local_as           = var.bgp_profile.local_as
+
     dynamic "peers" {
       for_each = var.bgp_peers
       content {
@@ -35,4 +37,5 @@ resource "avi_vrfcontext" "vmware_vrf_tf" {
 
     }
   }
+
 }

@@ -51,18 +51,30 @@ variable "vcenter_license_type" {
 variable "pool_name" {
   default = "demo-pool"
 }
+
+variable "servers" {
+  default = [
+    {
+      hostname = "100.64.130.203"
+      ratio = 1
+      enabled = true
+      resolve_server_by_dns = false
+      addr = "100.64.130.203"
+    },
+    {
+      hostname = "100.64.130.204"
+      ratio = 1
+      enabled = true
+      resolve_server_by_dns = false
+      addr = "100.64.130.204"
+    }
+  ]
+}
+
 variable "server_name" {
-  default = "100.64.130.203"
+  default = "www.avi.com"
 }
-variable "server_ip" {
-  default = "100.64.130.203"
-}
-variable "hostname" {
-  default = "me-client"
-}
-variable "resolve_server_by_dns" {
-  default = false
-}
+
 variable "realtime_metrics" {
   default = true
 }
