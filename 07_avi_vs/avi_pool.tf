@@ -14,7 +14,7 @@ resource "avi_pool" "pool_tf_vs" {
       }
       mask = split("/", var.vcenter_network_pool_subnet_cidr)[1]
     }
-    network_ref = data.avi_network.network_vip.id
+    network_ref = data.avi_network.network_pool.id
   }
 
   rewrite_host_header_to_sni = var.rewrite_host_header
