@@ -55,3 +55,8 @@ resource "avi_backupconfiguration" "backup_config" {
     version = 1
   }
 }
+
+resource "avi_controllerproperties" "controllerProp" {
+  api_idle_timeout = 150
+
+}
