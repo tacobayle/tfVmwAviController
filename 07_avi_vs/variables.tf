@@ -33,7 +33,7 @@ variable "vsphere_privilege" {
 
 
 variable "avi_version" {
-  default = "21.1.3"
+  default = "22.1.3"
 }
 
 variable "tenant" {
