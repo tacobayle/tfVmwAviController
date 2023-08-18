@@ -7,5 +7,5 @@ variable "avi_tenant" {
   default = "admin"
 }
 variable "avi_version" {
-  default = "22.1.1"
+  default = "22.1.4"
 }

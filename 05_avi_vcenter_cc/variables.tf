@@ -29,7 +29,7 @@ variable "vsphere_server" {
 }
 
 variable "avi_version" {
-  default = "22.1.3"
+  default = "22.1.4"
 }
 variable "tenant" {
   default = "admin"

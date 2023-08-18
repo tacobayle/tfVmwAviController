@@ -1,5 +1,5 @@
 variable "avi_version" {
-  default = "22.1.1"
+  default = "22.1.4"
 }
 
 variable "avi_dns_server_ips" {
