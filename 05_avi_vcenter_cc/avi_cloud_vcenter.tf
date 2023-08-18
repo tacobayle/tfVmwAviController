@@ -13,7 +13,6 @@ resource "avi_cloud" "vmware_cloud_tf" {
       id = var.content_library_id
     }
     password                 = var.vsphere_password
-    deactivate_vm_discovery =  "false"
   }
   license_tier = var.avi_license
   license_type = var.vcenter_license_type

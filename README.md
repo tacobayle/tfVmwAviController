@@ -53,7 +53,7 @@ controller-22.1.4-9196.ova
     - Netmask via var.network_mask ("255.255.252.0")
     - Gateway via var.gateway4 ("10.206.112.1") 
   - if var.cluster is false, 1 VM controller will be deployed
-  - if var.cluster is true, 3 VM controller will be deployed and configured as a cluster
+  - if var.cluster is true, 3 VMs controller will be deployed and configured as a cluster
 ```shell
 git clone https://github.com/tacobayle/tfVmwAviController
 cd tfVmwAviController/01_infra
