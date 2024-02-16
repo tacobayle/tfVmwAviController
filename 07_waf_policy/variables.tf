@@ -6,7 +6,7 @@ variable "avi_controller_ips" {
 }
 
 variable "avi_version" {
-  default = "21.1.4"
+  default = "22.1.5"
 }
 variable "avi_tenant" {
   default = "admin"

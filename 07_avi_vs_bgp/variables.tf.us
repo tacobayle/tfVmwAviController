@@ -46,7 +46,7 @@ variable "vsphere_url" {
 }
 
 variable "avi_version" {
-  default = "21.1.3"
+  default = "22.1.5"
 }
 
 variable "tenant" {
