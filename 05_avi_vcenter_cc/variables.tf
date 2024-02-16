@@ -11,7 +11,7 @@ variable "vcenter_datacenter" {
 }
 
 variable "cloud_name" {
-  default = "dc1_vcenter"
+  default = "Default-Cloud"
 }
 variable "vcenter_network" {
   default = "vxw-dvs-34-virtualwire-3-sid-1080002-sof2-01-vc08-avi-mgmt"

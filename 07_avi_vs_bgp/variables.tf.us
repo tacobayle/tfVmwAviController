@@ -14,7 +14,7 @@ variable "vm_datastore" {
 }
 
 variable "cloud_name" {
-  default = "dc1_vCenter"
+  default = "Default-Cloud"
 }
 
 variable "vcenter_network_vip" {

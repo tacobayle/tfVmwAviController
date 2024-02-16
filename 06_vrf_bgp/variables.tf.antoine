@@ -8,7 +8,7 @@ variable "avi_tenant" {
 variable "avi_password" {}
 
 variable "cloud_name" {
-    default = "dc1_vcenter"
+    default = "Default-Cloud"
 }
 
 variable "avi_vrf" {

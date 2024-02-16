@@ -16,7 +16,7 @@ variable "vcenter_network_pool" {
 }
 
 variable "cloud_name" {
-  default = "dc1_vcenter"
+  default = "Default-Cloud"
 }
 
 variable "vcenter_network_vip_subnet_cidr" {
