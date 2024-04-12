@@ -2,32 +2,35 @@
 #
 variable "vsphere_username" {}
 variable "vsphere_password" {}
-variable "avi_controller_url" {}
 #
 # Other Variables
 #
+variable "avi_controller_url" {
+  default = "http://10.206.114.108:8000/controller-22.1.6-9191.ova"
+}
+#
 variable "vsphere_server" {
-  default = "sof2-01-vc08.oc.vmware.com"
+  default = "wdc-06-vc12.oc.vmware.com"
 }
 
 variable "vcenter_dc" {
-  default = "sof2-01-vc08"
+  default = "wdc-06-vc12"
 }
 
 variable "vcenter_cluster" {
-  default = "sof2-01-vc08c01"
+  default = "wdc-06-vc12c01"
 }
 
 variable "vcenter_datastore" {
-  default = "sof2-01-vc08c01-vsan"
+  default = "wdc-06-vc12c01-vsan"
 }
 
 variable "vcenter_network" {
-  default = "vxw-dvs-34-virtualwire-3-sid-1080002-sof2-01-vc08-avi-mgmt"
+  default = "vxw-dvs-34-virtualwire-3-sid-6120002-wdc-06-vc12-avi-mgmt"
 }
 
 variable "vcenter_folder" {
-  default = "nic-workshop-controllers"
+  default = "nic-workshop-ctrl"
 }
 
 variable "content_library" {
@@ -41,7 +44,7 @@ variable "dhcp" {
 }
 
 variable "avi_ip4_addresses" {
-  default = ["10.41.134.131", "10.41.134.132", "10.41.134.133"]
+  default = ["10.206.112.76", "10.206.112.77", "10.206.112.113"]
 }
 
 variable "network_mask" {
@@ -49,7 +52,7 @@ variable "network_mask" {
 }
 
 variable "gateway4" {
-  default = "10.41.132.1"
+  default = "10.206.112.1"
 }
 
 variable "avi_cluster" {
@@ -58,7 +61,7 @@ variable "avi_cluster" {
 
 variable "controller" {
   default = {
-    cpu = 8
+    cpu = 6
     memory = 24768
     disk = 128
     remove_file = false

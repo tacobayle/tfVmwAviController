@@ -2,51 +2,37 @@ variable "avi_username" {
   default = "admin"
 }
 
-variable "avi_password" {}
-variable "vsphere_password" {}
-variable "avi_controller_ips" {}
-
-
-variable "vcenter_network_vip" {
-  default = "vxw-dvs-34-virtualwire-118-sid-1080117-sof2-01-vc08-avi-dev114"
-}
-
-variable "vcenter_network_pool" {
-  default = "vxw-dvs-34-virtualwire-117-sid-1080116-sof2-01-vc08-avi-dev113"
-}
-
-variable "cloud_name" {
-  default = "Default-Cloud"
-}
-
-variable "vcenter_network_vip_subnet_cidr" {
-  default = "100.64.131.0/24"
-}
-
-variable "vcenter_network_pool_subnet_cidr" {
-  default = "100.64.130.0/24"
-}
-
-variable "vsphere_privilege" {
-  default = "WRITE_ACCESS"
-}
-
-
 variable "avi_version" {
-  default = "22.1.5"
+  default = "22.1.6"
 }
 
 variable "tenant" {
   default = "admin"
 }
 
+variable "avi_password" {}
 
-variable "avi_license" {
-  default = "ENTERPRISE"
+variable "cloud_name" {
+  default = "Default-Cloud"
 }
-variable "vcenter_license_type" {
-  default = "LIC_CORES"
+
+variable "vcenter_network_vip" {
+  default = "vxw-dvs-34-virtualwire-120-sid-6120119-wdc-06-vc12-avi-dev116"
 }
+
+variable "vcenter_network_pool" {
+  default = "vxw-dvs-34-virtualwire-116-sid-6120115-wdc-06-vc12-avi-dev112"
+}
+
+variable "vcenter_network_vip_subnet_cidr" {
+  default = "100.64.133.0/24"
+}
+
+variable "vcenter_network_pool_subnet_cidr" {
+  default = "100.64.129.0/24"
+}
+
+variable "avi_controller_ips" {}
 
 variable "pool_name" {
   default = "demo-pool"
@@ -55,26 +41,28 @@ variable "pool_name" {
 variable "servers" {
   default = [
     {
-      hostname = "100.64.130.203"
+      hostname = "100.64.129.203"
       ratio = 1
       enabled = true
       resolve_server_by_dns = false
-      addr = "100.64.130.203"
+      addr = "100.64.129.203"
     },
     {
-      hostname = "100.64.130.204"
+      hostname = "100.64.129.204"
       ratio = 1
       enabled = true
       resolve_server_by_dns = false
-      addr = "100.64.130.204"
+      addr = "100.64.129.204"
     }
   ]
 }
 
-variable "server_name" {
+variable "hostname" {
   default = "www.avi.com"
 }
-
+variable "resolve_server_by_dns" {
+  default = false
+}
 variable "realtime_metrics" {
   default = true
 }
@@ -88,8 +76,9 @@ variable "rewrite_host_header" {
   default = true
 }
 variable "vip_ip" {
-  default = "100.64.131.224"
+  default = "100.64.133.250"
 }
+
 variable "vs_port" {
   default = "443"
 }

@@ -1,9 +1,9 @@
 variable "avi_version" {
-  default = "22.1.5"
+  default = "22.1.6"
 }
 
 variable "avi_dns_server_ips" {
-  default = ["10.23.108.1", "10.23.108.2"]
+  default = ["10.206.8.130", "10.206.8.131"]
 }
 variable "avi_ntp_server_ips" {
   default = ["95.81.173.155", "188.165.236.162"]

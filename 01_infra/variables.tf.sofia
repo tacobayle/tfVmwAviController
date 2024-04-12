@@ -7,27 +7,27 @@ variable "avi_controller_url" {}
 # Other Variables
 #
 variable "vsphere_server" {
-  default = "wdc-06-vc12.oc.vmware.com"
+  default = "sof2-01-vc08.oc.vmware.com"
 }
 
 variable "vcenter_dc" {
-  default = "wdc-06-vc12"
+  default = "sof2-01-vc08"
 }
 
 variable "vcenter_cluster" {
-  default = "wdc-06-vc12c01"
+  default = "sof2-01-vc08c01"
 }
 
 variable "vcenter_datastore" {
-  default = "wdc-06-vc12c01-vsan"
+  default = "sof2-01-vc08c01-vsan"
 }
 
 variable "vcenter_network" {
-  default = "vxw-dvs-34-virtualwire-3-sid-6120002-wdc-06-vc12-avi-mgmt"
+  default = "vxw-dvs-34-virtualwire-3-sid-1080002-sof2-01-vc08-avi-mgmt"
 }
 
 variable "vcenter_folder" {
-  default = "my-ctrl-folder"
+  default = "nic-workshop-controllers"
 }
 
 variable "content_library" {
@@ -41,7 +41,7 @@ variable "dhcp" {
 }
 
 variable "avi_ip4_addresses" {
-  default = ["10.206.112.76", "10.206.112.77", "10.206.112.113"]
+  default = ["10.41.134.131", "10.41.134.132", "10.41.134.133"]
 }
 
 variable "network_mask" {
@@ -49,7 +49,7 @@ variable "network_mask" {
 }
 
 variable "gateway4" {
-  default = "10.206.112.1"
+  default = "10.41.132.1"
 }
 
 variable "avi_cluster" {

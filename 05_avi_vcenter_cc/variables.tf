@@ -4,17 +4,15 @@ variable "avi_username" {
 
 variable "avi_password" {}
 
-variable "content_library_id" {}
-
 variable "vcenter_datacenter" {
-  default = "sof2-01-vc08"
+  default = "wdc-06-vc12"
 }
 
 variable "cloud_name" {
   default = "Default-Cloud"
 }
 variable "vcenter_network" {
-  default = "vxw-dvs-34-virtualwire-3-sid-1080002-sof2-01-vc08-avi-mgmt"
+  default = "vxw-dvs-34-virtualwire-3-sid-6120002-wdc-06-vc12-avi-mgmt"
 }
 
 variable "vsphere_privilege" {
@@ -25,7 +23,7 @@ variable "vsphere_username" {}
 variable "vsphere_password" {}
 
 variable "vsphere_server" {
-  default = "sof2-01-vc08.oc.vmware.com"
+  default = "wdc-06-vc12.oc.vmware.com"
 }
 
 variable "avi_version" {
@@ -46,7 +44,7 @@ variable "vcenter_license_type" {
 variable "avi_controller_ips" {}
 
 variable "se_prefix" {
-  default = "Avi_TF_Nic_Workshop"
+  default = "Avi_RM_SE_AA"
 }
 variable "mem_per_se" {
   default     = 2048
