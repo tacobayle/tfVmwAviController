@@ -30,7 +30,7 @@ variable "vcenter_network" {
 }
 
 variable "vcenter_folder" {
-  default = "nic-workshop-ctrl"
+  default = "nic-workshop-ctrls"
 }
 
 variable "content_library" {
