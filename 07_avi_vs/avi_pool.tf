@@ -18,7 +18,6 @@ resource "avi_pool" "pool_tf_vs" {
   }
 
   rewrite_host_header_to_sni = var.rewrite_host_header
-  server_name                = var.server_name
 
   dynamic "servers" {
     for_each = var.servers
