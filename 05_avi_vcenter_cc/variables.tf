@@ -4,6 +4,9 @@ variable "avi_username" {
 
 variable "avi_password" {}
 
+variable "content_library_id" {}
+
+
 variable "vcenter_datacenter" {
   default = "wdc-06-vc12"
 }
