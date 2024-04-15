@@ -47,7 +47,7 @@ variable "vcenter_license_type" {
 variable "avi_controller_ips" {}
 
 variable "se_prefix" {
-  default = "Nic-demo-tf"
+  default = "Nic_demo_TF"
 }
 variable "mem_per_se" {
   default     = 2048
