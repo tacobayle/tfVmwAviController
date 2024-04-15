@@ -3,7 +3,7 @@ variable "avi_username" {
 }
 
 variable "avi_version" {
-  default = "22.1.6"
+  default = "22.1.5"
 }
 
 variable "tenant" {
