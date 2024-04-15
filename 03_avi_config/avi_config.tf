@@ -47,7 +47,6 @@ resource "avi_systemconfiguration" "avi_system" {
 
 resource "avi_backupconfiguration" "backup_config" {
   name       = "Backup-Configuration"
-  tenant_ref = var.avi_tenant
   save_local             = true
   maximum_backups_stored = 4
   backup_passphrase      = var.avi_password

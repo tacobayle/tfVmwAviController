@@ -8,9 +8,6 @@ variable "avi_dns_server_ips" {
 variable "avi_ntp_server_ips" {
   default = ["95.81.173.155", "188.165.236.162"]
 }
-variable "avi_tenant" {
-  default = "admin"
-}
 variable "avi_default_license_tier" {
   default = "ENTERPRISE" # or "ENTERPRISE_WITH_CLOUD_SERVICES"
 }
