@@ -59,9 +59,6 @@ resource "avi_backupconfiguration" "backup_config" {
   save_local             = true
   maximum_backups_stored = 4
   backup_passphrase      = var.avi_password
-  configpb_attributes {
-    version = 1
-  }
 }
 
 resource "avi_controllerproperties" "controllerProp" {
