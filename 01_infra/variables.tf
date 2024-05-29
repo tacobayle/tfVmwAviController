@@ -61,8 +61,8 @@ variable "avi_cluster" {
 
 variable "controller" {
   default = {
-    cpu = 6
-    memory = 24768
+    cpu = 8
+    memory = 32768
     disk = 128
     remove_file = false
   }

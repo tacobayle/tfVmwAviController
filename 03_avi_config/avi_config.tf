@@ -44,6 +44,11 @@ resource "avi_systemconfiguration" "avi_system" {
   }
 }
 
+import {
+  to = avi_backupconfiguration.backup_config
+  id =
+}
+
 
 resource "avi_backupconfiguration" "backup_config" {
   name       = "Backup-Configuration"
