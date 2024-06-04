@@ -1,3 +1,12 @@
+data "avi_serviceenginegroup" "vsphere_se_group" {
+  name = "Default-Group"
+}
+
+import {
+  to = avi_serviceenginegroup.vsphere_se_group
+  id = data.avi_serviceenginegroup.vsphere_se_group.id
+}
+
 resource "avi_serviceenginegroup" "vsphere_se_group" {
   name                         = "Default-Group"
   archive_shm_limit            = 8

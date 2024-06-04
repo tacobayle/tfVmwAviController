@@ -1,5 +1,15 @@
+data "avi_cloud" "vmware_cloud_tf" {
+  name = "Default-Cloud"
+}
+
+import {
+  to = avi_cloud.vmware_cloud_tf
+  id = data.avi_cloud.vmware_cloud_tf.id
+}
+
+
 resource "avi_cloud" "vmware_cloud_tf" {
-  name         = var.cloud_name
+  name         = "Default-Cloud"
   vtype        = "CLOUD_VCENTER"
   dhcp_enabled = true
   vcenter_configuration {

@@ -39,7 +39,7 @@ on linux_amd64
 ### Avi Version tested
 
 ```
-controller-30.2.1-9105.ova
+controller-22.1.6-9191.ova
 ```
 
 ## Input/Parameters:
