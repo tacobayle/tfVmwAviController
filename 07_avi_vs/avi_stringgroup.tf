@@ -1,3 +1,12 @@
+data "avi_stringgroup" "string_group" {
+  name = "System-Compressible-Content-Types"
+}
+
+import {
+  to = avi_stringgroup.string_group
+  id = data.avi_stringgroup.string_group.id
+}
+
 resource "avi_stringgroup" "string_group" {
   name = "System-Compressible-Content-Types"
   kv {
