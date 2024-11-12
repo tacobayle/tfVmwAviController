@@ -26,7 +26,7 @@ variable "vcenter_datastore" {
 }
 
 variable "vcenter_network" {
-  default = "ams-cm2w1-nsx1-avi-mgmt"
+  default = "ams-cm2w1-nsx1-avi-66-50"
 }
 
 variable "vcenter_folder" {
@@ -44,7 +44,7 @@ variable "dhcp" {
 }
 
 variable "avi_ip4_addresses" {
-  default = ["10.6.248.81", "10.6.248.82", "10.6.248.83"]
+  default = ["100.66.50.11", "100.66.50.12", "100.66.50.13"]
 }
 
 variable "network_mask" {
@@ -52,7 +52,7 @@ variable "network_mask" {
 }
 
 variable "gateway4" {
-  default = "10.6.248.1"
+  default = "100.66.50.254"
 }
 
 variable "avi_cluster" {
