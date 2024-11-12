@@ -1,12 +1,12 @@
 variable "avi_version" {
-  default = "30.2.2"
+  default = "22.1.7"
 }
 
 variable "avi_dns_server_ips" {
-  default = ["10.206.8.130", "10.206.8.131"]
+  default = ["192.19.189.10", "192.19.189.30"]
 }
 variable "avi_ntp_server_ips" {
-  default = ["95.81.173.155", "188.165.236.162"]
+  default = ["10.34.14.20"]
 }
 variable "avi_default_license_tier" {
   default = "ENTERPRISE" # or "ENTERPRISE_WITH_CLOUD_SERVICES"

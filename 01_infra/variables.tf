@@ -6,7 +6,7 @@ variable "vsphere_password" {}
 # Other Variables
 #
 variable "avi_controller_url" {
-  default = "http://10.6.248.79:8000/controller-30.2.2-9108.ova"
+  default = "http://10.6.248.79:8000/controller-22.1.7-9093.ova"
 }
 #
 variable "vsphere_server" {
