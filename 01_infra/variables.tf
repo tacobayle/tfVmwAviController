@@ -6,7 +6,7 @@ variable "vsphere_password" {}
 # Other Variables
 #
 variable "avi_controller_url" {
-  default = "http://10.6.248.129:8000/controller-22.1.6-9191.ova"
+  default = "http://10.6.248.79:8000/controller-30.2.2-9108.ova"
 }
 #
 variable "vsphere_server" {
@@ -40,11 +40,11 @@ variable "content_library" {
 }
 
 variable "dhcp" {
-  default = true
+  default = false
 }
 
 variable "avi_ip4_addresses" {
-  default = ["1.1.1.2", "1.1.1.3", "1.1.1.4"]
+  default = ["10.6.248.81", "10.6.248.82", "10.6.248.83"]
 }
 
 variable "network_mask" {
@@ -52,7 +52,7 @@ variable "network_mask" {
 }
 
 variable "gateway4" {
-  default = "1.1.1.1"
+  default = "10.6.248.1"
 }
 
 variable "avi_cluster" {
