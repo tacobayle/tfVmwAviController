@@ -1,5 +1,5 @@
 variable "avi_version" {
-    default = "30.2.2"
+    default = "22.1.7"
 }
 variable "avi_controller_ips" {}
 variable "avi_tenant" {
