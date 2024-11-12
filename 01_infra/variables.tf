@@ -52,7 +52,7 @@ variable "network_mask" {
 }
 
 variable "gateway4" {
-  default = "100.66.50.3"
+  default = "100.66.50.35"
 }
 
 variable "avi_cluster" {
