@@ -26,7 +26,7 @@ variable "vsphere_privilege" {
 }
 
 variable "avi_version" {
-  default = "22.1.6"
+  default = "31.1.2"
 }
 variable "tenant" {
   default = "admin"
