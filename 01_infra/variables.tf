@@ -6,7 +6,7 @@ variable "vsphere_password" {}
 # Other Variables
 #
 variable "avi_controller_url" {
-  default = "http://10.6.248.79:8000/controller-31.1.2-9193.ova"
+  default = "http://10.6.248.79:8000/controller-31.2.1-9148.ova"
 }
 #
 variable "vsphere_server" {
@@ -61,7 +61,7 @@ variable "avi_cluster" {
 
 variable "controller" {
   default = {
-    cpu = 8
+    cpu = 6
     memory = 32768
     disk = 128
     remove_file = false
